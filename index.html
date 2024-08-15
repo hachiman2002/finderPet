@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta una Mascota</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Clases personalizadas para el menú */
+        .hidden-menu {
+            display: none;
+        }
+
+        .visible-menu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Barra de Navegación -->
+    <nav class="bg-green-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-2xl">Adopta una Mascota</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-white hover:text-gray-200">Inicio</a>
+                <a href="#" class="text-white hover:text-gray-200">Adopta</a>
+                <a href="#" class="text-white hover:text-gray-200">Perdidos</a>
+                <a href="#" class="text-white hover:text-gray-200">Voluntariados</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="./profile.html" class="text-white hover:text-gray-200 hidden md:block">Mi Perfil</a>
+                <a href="./profile.html">
+                    <img src="./img/profiles/profile-one.avif" alt="Perfil" class="w-10 h-10 rounded-full object-cover">
+                </a>
+                <button id="menuButton" class="text-white md:hidden focus:outline-none">
+                    <!-- Ícono de menú hamburguesa -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 7.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú desplegable -->
+        <div id="mobileMenu" class="md:hidden hidden-menu text-center bg-green-600 text-white">
+            <a href="#" class="block py-2 hover:bg-green-500">Inicio</a>
+            <a href="#" class="block py-2 hover:bg-green-500">Adopta</a>
+            <a href="#" class="block py-2 hover:bg-green-500">Perdidos</a>
+            <a href="#" class="block py-2 hover:bg-green-500">Voluntariados</a>
+            <a href="./profile.html" class="block py-2 hover:bg-green-500">Mi Perfil</a>
+        </div>
+    </nav>
+
+    <!-- Sección Principal -->
+    <header class="bg-cover bg-center h-64 text-white flex items-center justify-center"
+        style="background-image: url('./img/background/bg-inicio.jpg');">
+        <!--<h1 class="text-4xl text-green-600 md:text-5xl font-bold">Encuentra tu compañero fiel</h1>-->
+    </header>
+
+    <!-- Sección de Contenido -->
+    <main class="container mx-auto p-8">
+        <!--Anuncio-->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden flex">
+            <img src="./img/advertisement/adver1.png" alt="Anuncio 1" class="w-full md:w-1/2 object-cover">
+            <div class="p-6 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold text-gray-800">Título del Anuncio 1</h3>
+                <p class="text-gray-600 mt-2">Descripción breve del anuncio o evento. Aquí puedes incluir detalles
+                    importantes para los visitantes.</p>
+                <button class="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Más
+                    Información</button>
+            </div>
+        </div>
+
+        <!--Seccion cards-->
+        <section class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <h3 class="text-xl font-bold mb-4 text-green-600">Adopta</h3>
+                <p class="text-gray-700">Descubre las mascotas que están buscando un hogar amoroso.</p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <h3 class="text-xl font-bold mb-4 text-green-600">Mascotas Perdidas</h3>
+                <p class="text-gray-700">Ayuda a reunir a las mascotas perdidas con sus familias.</p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                <h3 class="text-xl font-bold mb-4 text-green-600">Voluntariados</h3>
+                <p class="text-gray-700">Involúcrate y forma parte de nuestro equipo de voluntarios.</p>
+            </div>
+        </section>
+
+        <!--Seccion adopcion-->
+        <div class="mt-10">
+            <!-- Título de la Sección -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-semibold text-gray-800">Mascotas en Adopción</h2>
+                <p class="text-gray-600 mt-4">Explora las mascotas que están buscando un nuevo hogar. Encuentra a tu
+                    nuevo mejor amigo aquí.</p>
+            </div>
+            <!-- Barra de Búsqueda -->
+            <div class="flex justify-center mb-12">
+                <input type="text" placeholder="Buscar por raza, edad, sexo..."
+                    class="w-full md:w-1/2 p-4 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" />
+                <button class="bg-green-500 text-white px-6 rounded-r-lg hover:bg-green-600">Buscar</button>
+            </div>
+            <!-- Grid de Mascotas en Adopción -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta de Mascota 1 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="./img/publications/public1.webp" alt="Mascota 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Mascota 1</h3>
+                        <p class="text-gray-600 mt-2">Raza: Labrador Retriever</p>
+                        <p class="text-gray-600">Edad: 2 años</p>
+                        <p class="text-gray-600">Sexo: Macho</p>
+                        <button class="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Ver
+                            Detalles</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Mascota 2 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="./img/publications/public2.avif" alt="Mascota 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Mascota 2</h3>
+                        <p class="text-gray-600 mt-2">Raza: Golden Retriever</p>
+                        <p class="text-gray-600">Edad: 3 años</p>
+                        <p class="text-gray-600">Sexo: Hembra</p>
+                        <button class="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Ver
+                            Detalles</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Mascota 3 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="./img/publications/public3.webp" alt="Mascota 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Mascota 3</h3>
+                        <p class="text-gray-600 mt-2">Raza: Bulldog Francés</p>
+                        <p class="text-gray-600">Edad: 1 año</p>
+                        <p class="text-gray-600">Sexo: Macho</p>
+                        <button class="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Ver
+                            Detalles</button>
+                    </div>
+                </div>
+
+                <!-- Añadir más tarjetas de mascotas según sea necesario -->
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-green-600 p-4 text-center text-white">
+        <p>&copy; 2024 Adopta una Mascota. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Script para el botón de menú hamburguesa
+        document.getElementById('menuButton').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu.classList.contains('hidden-menu')) {
+                mobileMenu.classList.remove('hidden-menu');
+                mobileMenu.classList.add('visible-menu');
+            } else {
+                mobileMenu.classList.add('hidden-menu');
+                mobileMenu.classList.remove('visible-menu');
+            }
+        });
+    </script>
+</body>
+
+</html>
